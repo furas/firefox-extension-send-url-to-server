@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Send URL to Server",
+  "version": "0.0.10",
+  "author": "Bartłomiej 'furas' Burek",
+  "description": "Send URL to (own) Server (created: 2024.11.21) (updated: 2024.11.22)",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "notifications"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "send-url-to-server@furas.pl"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "48": "default.svg",
+    "96": "default.svg"
+  },
+  "browser_action": {
+    "default_icon": "default.svg",
+    "default_title": "Send URL to Server"
+  }
+}
