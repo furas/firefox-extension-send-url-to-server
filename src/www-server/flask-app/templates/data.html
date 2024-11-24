@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    td {
+      border: 1px solid #888;
+      padding: 5px
+    }
+  </style>
+</head>
+
+<body>
+  <form method="GET">
+    date: <input name="date">
+    time: <input name="time">
+    url: <input name="url">
+    title: <input name="title">
+    <button type="submit">OK</button>
+  </form>
+  <a href="/data/">Pokaż wszystko</a>
+  <table>
+    {% for index, row in data.iterrows() %}
+    <tr>
+      <td>{{ index }}</td>
+      <td><a href="/data/?date={{ row.date }}">{{ row.date }}</a></td>
+      <td>{{ row.time }}</td>
+      <td><a href="{{ row.url }}">{{ row.title }}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>

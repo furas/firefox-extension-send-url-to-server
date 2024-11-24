@@ -1,0 +1,12 @@
+[Unit]
+Description="Flask - Send URL to Server"
+After=network.target
+
+[Service]
+WorkingDirectory=/home/furas/projects/send-url-to-server/src/flask-app
+ExecStart=/home/furas/projects/send-url-to-server/.venv/bin/python3 /home/furas/projects/send-url-to-server/src/flask-app/app.py
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
